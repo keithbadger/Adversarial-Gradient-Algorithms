@@ -18,6 +18,6 @@ for i in range(l):
     ybar[np.argmin(G.transpose() @ tmp)] = 1
     x = x + alpha*(xbar - x)
     y = y + alpha*(ybar - y)
-    t = np.array([list(range(l))])
+t = np.array([list(range(l))])
 plt.plot(t.transpose(),r_t)
 plt.show()
