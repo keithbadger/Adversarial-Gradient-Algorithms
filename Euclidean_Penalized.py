@@ -4,17 +4,17 @@ import matplotlib.pyplot as plt
 n = 3 # n is the number of rows and columns
 l = 100000 # l is the number of iterations
 alpha = .01 #stepsize parameter
-e = 1
+e = 1 # the coefficient of the L2 penalty
 
 x = np.random.rand(n,1) # is the probability of selecting a row with maximization goal
 y = np.random.rand(n,1) # is the probability of selecting a col with minimization goal
 x = x / x.sum()
 y = y / y.sum()
 x = np.array([[1],[0],[0]])
-y = np.array([[0],[1],[0]])
+y = np.array([[0],[1],[0]]) #overwrites x,y for the rock,paper,scissors problem
 #r_t = np.array([]) # record of rewards
 G = np.random.randint(-n,n,size=(n,n)) # a random grid
-G = np.array([ [0,-1,1], [1,0,-1], [-1,1,0] ])
+G = np.array([ [0,-1,1], [1,0,-1], [-1,1,0] ]) # rps grid
 
 for k in range(l):
     grad = -1*(G @ y)
